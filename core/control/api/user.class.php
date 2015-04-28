@@ -402,6 +402,7 @@ class API_USER {
 			$this->app_check("get");
 
 			if ($this->appAllow["user"]["chkmail"] != 1) {
+
 				$_arr_return = array(
 					"str_alert" => "x050311",
 				);
@@ -414,7 +415,7 @@ class API_USER {
 				$this->obj_api->halt_re($_arr_userMail);
 			}
 
-			$_arr_userRow = $this->mdl_user->mdl_read($_arr_userName["user_mail"], "user_mail", $_arr_userMail["not_id"]);
+			$_arr_userRow = $this->mdl_user->mdl_read($_arr_userMail["user_mail"], "user_mail", $_arr_userMail["not_id"]);
 			if ($_arr_userRow["str_alert"] == "y010102") {
 				$_str_alert = "x010211";
 			} else {

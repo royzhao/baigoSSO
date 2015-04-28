@@ -12,9 +12,11 @@ if(!defined("IN_BAIGO")) {
 /*-------------用户模型-------------*/
 class MODEL_USER {
 	private $obj_db;
+    private $is_create_view;
 
 	function __construct() { //构造函数
 		$this->obj_db = $GLOBALS["obj_db"]; //设置数据库对象
+        $this->is_create_view = false;
 	}
 
 
@@ -369,7 +371,9 @@ class MODEL_USER {
 		if ($num_appId > 0) {
 			$_str_sqlWhere .= " AND belong_app_id=" . $num_appId;
 		}
-
+        if($this->is_create_view == false){
+            $this->mdl_create_view();
+        }
 		$_arr_userRows = $this->obj_db->select_array(BG_DB_TABLE . "user_view", $_arr_userSelect, $_str_sqlWhere . " ORDER BY user_id DESC"); //查询数据
 
 		return $_arr_userRows;

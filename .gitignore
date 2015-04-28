@@ -1,0 +1,4 @@
+.idea/
+config/config.inc.php
+config/is_install.php
+tpl/compile/

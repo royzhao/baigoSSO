@@ -49,7 +49,7 @@ define("BG_NAME_JS", "js"); //JS
 define("BG_NAME_IMAGE", "image"); //图片
 
 /*-------------------------路径-------------------------*/
-define("BG_PATH_ROOT", str_replace("\\", "/", substr(dirname(__FILE__), 0, strrpos(dirname(__FILE__), BG_NAME_CONFIG)))); //根目录
+define("BG_PATH_ROOT", str_replace("\\", "/", substr(dirname(__FILE__), 0, strrpos(dirname(__FILE__), BG_NAME_CONFIG))."/")); //根目录
 define("BG_PATH_CONFIG", BG_PATH_ROOT . BG_NAME_CONFIG . "/"); //共用
 
 define("BG_PATH_TPL", BG_PATH_ROOT . BG_NAME_TPL . "/"); //模板
